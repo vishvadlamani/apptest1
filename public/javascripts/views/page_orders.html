@@ -1,0 +1,53 @@
+<div class="bg-light lter b-b wrapper-md" >
+  <h1 class="m-n font-thin h3">{{orderState}} Orders</h1>
+</div>
+<div class="wrapper-md">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{orderState}} Orders
+    </div>
+    <div class="table-responsive">
+      <table ui-jq="dataTable" ui-refresh="showData" class="table table-striped b-t b-b">
+        <thead>
+          <tr>
+            <th  >Name</th>
+            <th  >Email</th>
+            <th  >Phone</th>
+            <th  >Address</th>
+            <th  >City</th>
+            <th  >State</th>
+            <th  >Zip</th>
+            <th ng-if="orderState == 'Pending' && user.role == 'Normal'" >CC Number</th>
+            <th ng-if="orderState == 'Pending' && user.role == 'Normal'" >cvv</th>
+            <th ng-if="orderState == 'Pending' && user.role == 'Normal'" >Expire month/year</th>
+            <th  >Amount</th>
+            <th  >Status</th>
+            <th ng-if="orderState == 'Pending' && user.role == 'Normal'">Change status To</th>
+            <th ng-if="user.role == 'Admin' && (orderState == 'Processed' || orderState == 'Paid' || orderState == 'Shipped')" style="width:20%">Change status To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="data in orders.data">
+            <td>{{data.firstname}} {{data.lastname}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.phone}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.city}}</td>
+            <td>{{data.state}}</td>
+            <td>{{data.zip}}</td>
+            <td ng-if="orderState == 'Pending' && user.role == 'Normal'">{{data.cc_number}}</td>
+            <td ng-if="orderState == 'Pending' && user.role == 'Normal'">{{data.cvv}}</td>
+            <td ng-if="orderState == 'Pending' && user.role == 'Normal'">{{data.exp_month}}/{{data.exp_year}}</td>
+            <td>{{data.amount}}</td>
+            <td>{{data.status}}</td>
+            <td ng-if="orderState == 'Pending' && user.role == 'Normal'"><button ng-click="changeOrderStatus(data._id, 'Pending', 'Processed')" class="btn btn-info">Processed</button></td>
+            <td ng-if="user.role == 'Admin' && orderState == 'Processed'"><button ng-click="changeOrderStatus(data._id, 'Processed', 'Paid')" class="btn btn-info">Paid</button></td>
+            <td ng-if="user.role == 'Admin' && orderState == 'Paid'"><button ng-click="changeOrderStatus(data._id, 'Paid', 'Shipped')" class="btn btn-info">Shipped</button></td>
+            <td ng-if="user.role == 'Admin' && orderState == 'Shipped'"><button ng-click="changeOrderStatus(data._id, 'Shipped', 'Refund')" class="btn btn-info">Refund</button></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

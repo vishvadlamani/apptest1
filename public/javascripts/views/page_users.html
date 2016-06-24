@@ -1,0 +1,36 @@
+<div class="bg-light lter b-b wrapper-md" >
+  <h1 class="m-n font-thin h3">Users</h1>
+</div>
+<div class="wrapper-md">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Users
+    </div>
+    <div class="table-responsive">
+      <table ui-jq="dataTable" class="table table-striped b-t b-b">
+        <thead>
+          <tr>
+            <th  >Name</th>
+            <th  >Email</th>
+            <th >Phone</th>
+            <th >Role</th>
+            
+            <th >Change role To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="data in users.data">
+            <td>{{data.firstname}} {{data.lastname}}</td>
+            <td>{{data.email}}</td>
+            <td >{{data.phone}}</td>
+            <td >{{data.role}}</td>
+            <td >
+              <button ng-if="data.role == 'Normal'" ng-click="changeUserRole(data._id, data.role, 'Admin')" class="btn btn-info">Admin</button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

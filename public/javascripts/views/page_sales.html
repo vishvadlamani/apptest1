@@ -1,0 +1,54 @@
+
+<div class="hbox hbox-auto-xs hbox-auto-sm" >
+  <div class="col w-md bg-light dk b-r bg-auto">
+    <div class="wrapper hidden-sm hidden-xs" id="email-menu">
+      <ul class="nav nav-pills nav-stacked nav-sm">
+        <li ui-sref-active="active">
+          <a ui-sref="app.sales.orders({fold: ''})">
+            All Orders
+          </a>
+        </li>
+
+        <li ui-sref-active="active">
+          <a ui-sref="app.sales.orders({fold: 'Pending'})">
+            Pending
+          </a>
+        </li>
+
+        <li ui-sref-active="active">
+          <a ui-sref="app.sales.orders({fold: 'Processed'})">
+            Processed
+          </a>
+        </li>
+
+        <li ui-sref-active="active">
+          <a ui-sref="app.sales.orders({fold: 'Paid'})">
+            Paid
+          </a>
+        </li>
+
+        <li ui-sref-active="active">
+          <a ui-sref="app.sales.orders({fold: 'Shipped'})">
+            Shipped
+          </a>
+        </li>
+
+        <li ui-sref-active="active">
+          <a ui-sref="app.sales.orders({fold: 'Refund'})">
+            Refunds
+          </a>
+        </li>
+      </ul>      
+    </div>
+  </div>
+  <div class="col">
+    <div ui-view ></div>
+  </div>
+</div>
+
+
+
+
+
+
+

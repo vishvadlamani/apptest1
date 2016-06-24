@@ -1,0 +1,56 @@
+<!-- list -->
+<ul class="nav">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside.nav.HEADER">Navigation</span>
+  </li>
+
+  <li ui-sref-active="active">
+    <a ui-sref="access.404">
+      <i class="glyphicon glyphicon-stats icon text-info-dker"></i>
+      <span class="font-bold" translate="aside.nav.GETTINGSTARTED">Getting Started</span>
+    </a>
+  </li>
+  <li ui-sref-active="active">
+    <a ui-sref="app.dashboard-v1">
+      <i class="glyphicon glyphicon-stats icon text-info-dker"></i>
+      <span class="font-bold" translate="aside.nav.DASHBOARD">Dashboard</span>
+    </a>
+  </li>
+
+  <li ui-sref-active="active">
+    <a ui-sref="app.sales.orders">
+      <i class="glyphicon glyphicon-stats icon text-info-dker"></i>
+      <span class="font-bold" translate="aside.nav.SALES">Sales</span>
+    </a>
+  </li>
+
+  <li ui-sref-active="active" ng-if="user.role == 'Superadmin'">
+    <a ui-sref="app.users">
+      <i class="glyphicon glyphicon-stats icon text-info-dker"></i>
+      <span class="font-bold" translate="aside.nav.USERS">Users</span>
+    </a>
+  </li>
+
+  <li ui-sref-active="active">
+    <a ui-sref="app.profile">
+      <i class="glyphicon glyphicon-stats icon text-info-dker"></i>
+      <span class="font-bold" translate="aside.nav.PROFILE">Profile</span>
+    </a>
+  </li>
+
+ <!-- <li ui-sref-active="active">
+    <a ui-sref="app.page.payments">
+      <i class="glyphicon glyphicon-stats icon text-info-dker"></i>
+      <span class="font-bold" translate="aside.nav.PAYMENTS">Payments</span>
+    </a>
+  </li>
+
+  <li ui-sref-active="active">
+    <a ui-sref="app.page.shipments">
+      <i class="glyphicon glyphicon-stats icon text-info-dker"></i>
+      <span class="font-bold" translate="aside.nav.SHIPMENTS">Shipments</span>
+    </a>
+  </li>-->
+
+</ul>
+<!-- / list -->

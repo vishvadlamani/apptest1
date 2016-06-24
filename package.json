@@ -1,0 +1,24 @@
+{
+  "name": "lordcosmost",
+  "main": "server.js",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "~1.9.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "express-jwt": "^3.4.0",
+    "jwt-simple": "^0.3.1",
+    "kerberos": "0.0.21",
+    "moment": "^2.13.0",
+    "mongodb": "^2.1.18",
+    "mongoose": "~4.2.4",
+    "morgan": "~1.5.0",
+    "passport": "^0.3.0",
+    "passport-jwt": "^1.2.1",
+    "serve-favicon": "~2.3.0"
+  }
+}
